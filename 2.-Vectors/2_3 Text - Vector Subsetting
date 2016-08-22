@@ -1,0 +1,38 @@
+> # Vector Subsetting
+> 
+> # Selecting parts of your vector to come up with a new vecor
+> # remember that we are using sqaure brackets to go the indices of the required vector.
+> 
+> cardVector <- c("Spade"=13, "Diamond" = 10 , "Club" = 12 , "Heart" = 9)
+> cardVector
+  Spade Diamond    Club   Heart 
+     13      10      12       9 
+> 
+> #selecting first element 
+> cardVector[1]
+Spade 
+   13 
+> 
+> # selecting clubs 
+> cardVector["Club"]
+Club 
+  12 
+> 
+> # Selecting diamonds and heart in same order
+> resultantV <- cardVector[c(2,4)]
+> resultantV
+Diamond   Heart 
+     10       9 
+> 
+> #selecting diamonds and hearts in reverse order
+> resultantV <- cardVector[c(4,2)]
+> resultantV
+  Heart Diamond 
+      9      10 
+> 
+> # Selecting diamonds and heart using names
+> resultantV <- cardVector[c("Spade", "Club", "Diamond")]
+> resultantV
+  Spade    Club Diamond 
+     13      12      10 
+> 
