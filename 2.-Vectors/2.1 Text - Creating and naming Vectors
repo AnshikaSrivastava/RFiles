@@ -1,0 +1,75 @@
+Creating and naming Vectors
+
+Properties of a Vector-
+  - A vector is a sequence of elements of same atomic data data type
+  - Example - character vectors, numeric vectors, logica vectors etc.
+  
+> # Creating a vector in R
+> # - We use a c() function which allows us to combine all the values to create the vector
+> 
+> # Code below creates a character vectot of animals
+> c("cat", "dog", "fish", "rat")
+[1] "cat"  "dog"  "fish" "rat" 
+> 
+> # Ofcourse we can assign this vector to a variable
+> animalsVector <- c("cat", "dog", "fish", "rat")
+> 
+> # now we can check the values of this vector by simply typing the name 
+> animalsVector
+[1] "cat"  "dog"  "fish" "rat" 
+> 
+> # We can additionally check if animalVector is indeed a vector
+> is.vector(animalsVector)
+[1] TRUE
+
+
+creating a vector and assigning name/ labels to it's data elements
+
+> crimes <- c(90,80,50,35)
+> crimes
+[1] 90 80 50 35
+> #let's create a numeric vector with no. of crimes in Delhi, Mumbai, Bangalore
+> #and Hyderabad
+> crimes <- c(90,80,50,35)
+> 
+> crimes
+[1] 90 80 50 35
+> 
+> #But crimes here isn't very intuitive. For say how do I know which number 
+> #represent which city? so let's make another vector called cityVector
+> 
+> cityVector <- c("Delhi","Mumbai","Hyderabad","Bangalore")
+> cityVector
+[1] "Delhi"     "Mumbai"    "Hyderabad" "Bangalore"
+> 
+> #now let's assign cityVector to crimes so that appropriate resukts can be visualised
+> names(crimes) <- cityVector
+> crimes
+    Delhi    Mumbai Hyderabad Bangalore 
+       90        80        50        35 
+  
+  
+  
+  Assigning names to vectors while creation itself
+> #instead of assignning name vectors separately what I can also so is to create everything 
+> # together inside one vector. Exmaple?
+> 
+> cardVector <- c(king=4, queen = 3, joker = 4)
+> cardVector
+ king queen joker 
+    4     3     4 
+> 
+> #same thing could be achieved by using double quested. Let's prefer double quote for names 
+> # for the time being as it gives us exact differenctiation
+> 
+> cardVector2 <- c("spades"=13, "heart" = 12, "diamond" = 9)
+> cardVector2
+ spades   heart diamond 
+     13      12       9 
+     
+     
+     
+REVISITING VARIABLES
+What are variables exactly in R? R doesn't provide any distinction data structure to hold variables so in essence all variables are 
+vectors of length 1.
+
