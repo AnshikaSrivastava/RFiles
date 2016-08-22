@@ -1,0 +1,78 @@
+R data types
+
+We will use function class() to find out the data types of any variable
+
+LOGICAL DATA TYPE
+True and false - they can be abbreviated to T and F however I'll urge you to use the full name
+
+#Data Types
+
+#logical
+logicalVar <- TRUE
+class(logicalVar)
+logicalVar
+
+logicalVar <- FALSE
+class(logicalVar)
+logicalVar
+
+#numeric
+#integers and floats/ decimals both comes in nnumeric data type in R and the 
+# type conversion is implicit
+
+numOne  <- 5
+numTwo  <- 2
+
+result <- numOne / numTwo
+result
+class(result)
+
+#changing result
+result <- result * 2
+result
+class(result)
+
+One particular thing to notice here is that there is no distinction between floats and integers in numeric data type. 
+This is possible to see if we specify the value of an integer appended by 'L' at the end.
+> #Integers
+> numThree <- 50L
+> numThree
+[1] 50
+> class(numThree)
+[1] "integer"
+
+Note - make sure that you use only capital L while specifying an integer. lower case l is not recognised statement.
+
+Additionally instead of using class() function funtions like is.numeric() and is.character() can be used. The results from such 
+functions are boolean.
+is.numeric(result/3)
+is.integer(result/3)
+is.character(logicalVar)
+
+#Changing Data types
+data types can be changed using the as [dot] functions. This is typically a type of coersion and must be handled carefully 
+specifically in the example that a character string like "hello world"or "NA"can't be converted to numerics.
+
+> is.numeric(result/3)
+[1] TRUE
+> result
+[1] 5
+> is.character(result/3)
+[1] FALSE
+> is.integer(result/3)
+[1] FALSE
+> is.character(logicalVar)
+[1] FALSE
+> as.integer(5.4)
+[1] 5
+> as.character(9.999999)
+[1] "9.999999"
+> as.numeric("9851.654")
+[1] 9851.654
+
+Also please note when you convert a decimal to a integer, the decimal value is automatically lost. Lost as in TRUNCATED and not
+rounded off as we may assume.
+> as.integer(9.8)
+[1] 9
+> as.integer(6.00001)
+[1] 6
